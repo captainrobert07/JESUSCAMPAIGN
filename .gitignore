@@ -42,4 +42,4 @@ next-env.d.ts
 /work/
 
 # local Codex preview logs
-.codex-dev*.log
+.codex-*.log

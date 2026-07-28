@@ -22,6 +22,7 @@ html {
 
 body {
   margin: 0;
+  overflow-x: hidden;
   background: var(--paper);
   color: var(--ink);
   font-family: var(--font-archivo), Arial, sans-serif;
@@ -181,7 +182,8 @@ textarea {
   z-index: 2;
   display: grid;
   min-height: 100svh;
-  grid-template-rows: 1fr auto;
+  grid-template-rows: auto 1fr auto;
+  row-gap: clamp(24px, 3.5vh, 42px);
   padding: 142px 3vw 58px;
 }
 
@@ -202,10 +204,10 @@ textarea {
 .hero h1 {
   align-self: center;
   margin: 0;
-  font-size: clamp(5rem, 15vw, 14rem);
+  font-size: clamp(5rem, 13.5vw, 12.5rem);
   font-weight: 700;
-  letter-spacing: -0.075em;
-  line-height: 0.71;
+  letter-spacing: -0.055em;
+  line-height: 0.9;
   text-transform: uppercase;
 }
 
@@ -222,7 +224,7 @@ textarea {
   display: grid;
   grid-template-columns: minmax(280px, 520px) 1fr;
   align-items: end;
-  gap: 4vw;
+  gap: clamp(32px, 4vw, 70px);
 }
 
 .hero-bottom > p {
@@ -402,10 +404,10 @@ textarea {
 .contact h2,
 .confirmation-inner h1 {
   margin: 0;
-  font-size: clamp(4.4rem, 10vw, 9.5rem);
+  font-size: clamp(4.4rem, 9vw, 8.5rem);
   font-weight: 700;
-  letter-spacing: -0.075em;
-  line-height: 0.78;
+  letter-spacing: -0.055em;
+  line-height: 0.92;
   text-transform: uppercase;
 }
 
@@ -585,8 +587,8 @@ textarea {
 .location-card h3 {
   margin: 0 0 26px;
   font-size: clamp(4rem, 7vw, 7rem);
-  letter-spacing: -0.07em;
-  line-height: 0.85;
+  letter-spacing: -0.05em;
+  line-height: 0.96;
   text-transform: uppercase;
 }
 
@@ -648,7 +650,7 @@ textarea {
   font-family: var(--font-cormorant), Georgia, serif;
   font-size: clamp(2.8rem, 5vw, 5rem);
   font-weight: 500;
-  line-height: 0.9;
+  line-height: 1;
 }
 
 .ministry-item p {
@@ -729,14 +731,15 @@ textarea {
   z-index: 2;
   display: grid;
   min-height: 100svh;
-  grid-template-rows: auto 1fr auto;
+  grid-template-rows: auto 1fr auto auto;
+  row-gap: clamp(22px, 3vh, 38px);
   padding: 46px 3vw 54px;
 }
 
 .house-pretitle {
-  align-self: center;
+  align-self: end;
   max-width: 420px;
-  margin: 0 0 28px;
+  margin: 0;
   font-size: 0.7rem;
   font-weight: 700;
   letter-spacing: 0.14em;
@@ -744,7 +747,7 @@ textarea {
 }
 
 .house-copy h2 {
-  align-self: center;
+  align-self: start;
 }
 
 .house-copy h2 em {
@@ -785,7 +788,12 @@ textarea {
   display: grid;
   grid-template-columns: 0.8fr 1.2fr;
   min-height: 500px;
+  min-width: 0;
   background: var(--orange);
+}
+
+.visit-card > * {
+  min-width: 0;
 }
 
 .visit-card-brand {
@@ -802,8 +810,8 @@ textarea {
 
 .visit-card-brand strong {
   font-size: clamp(4rem, 8vw, 7.4rem);
-  letter-spacing: -0.07em;
-  line-height: 0.8;
+  letter-spacing: -0.05em;
+  line-height: 0.94;
 }
 
 .visit-details {
@@ -822,6 +830,7 @@ textarea {
   font-size: 1.05rem;
   font-style: normal;
   line-height: 1.6;
+  overflow-wrap: anywhere;
 }
 
 .visit-actions {
@@ -939,10 +948,10 @@ footer {
   display: flex;
   flex-direction: column;
   margin-bottom: 100px;
-  font-size: clamp(5rem, 15vw, 13.5rem);
+  font-size: clamp(5rem, 13vw, 12rem);
   font-weight: 700;
-  letter-spacing: -0.08em;
-  line-height: 0.67;
+  letter-spacing: -0.055em;
+  line-height: 0.84;
   text-transform: uppercase;
 }
 
@@ -1177,7 +1186,7 @@ footer {
   }
 }
 
-@media (max-width: 720px) {
+@media (max-width: 820px) {
   html {
     scroll-padding-top: 70px;
   }
@@ -1192,13 +1201,16 @@ footer {
   }
 
   .hero-content {
-    padding: 112px 18px 80px;
+    min-height: 100svh;
+    row-gap: 24px;
+    padding: 108px 18px 44px;
   }
 
   .hero h1 {
     align-self: center;
-    font-size: clamp(4rem, 20vw, 7rem);
-    line-height: 0.76;
+    font-size: clamp(3.8rem, 17.5vw, 8.5rem);
+    letter-spacing: -0.045em;
+    line-height: 0.92;
   }
 
   .hero h1 span:last-child {
@@ -1207,6 +1219,8 @@ footer {
 
   .hero-bottom > p {
     max-width: 350px;
+    font-size: clamp(1.18rem, 5.2vw, 1.6rem);
+    line-height: 1.22;
   }
 
   .button-row {
@@ -1220,15 +1234,16 @@ footer {
   }
 
   .section {
-    padding: 76px 18px;
+    padding: 82px clamp(18px, 4vw, 34px);
   }
 
   .section h2,
   .house-copy h2,
   .contact h2,
   .confirmation-inner h1 {
-    font-size: clamp(3.5rem, 18vw, 6rem);
-    line-height: 0.8;
+    font-size: clamp(3.2rem, 15.5vw, 5.4rem);
+    letter-spacing: -0.04em;
+    line-height: 0.96;
   }
 
   .about {
@@ -1272,7 +1287,7 @@ footer {
   }
 
   .location-card {
-    min-height: 500px;
+    min-height: 470px;
     padding: 24px 20px;
   }
 
@@ -1282,7 +1297,8 @@ footer {
   }
 
   .location-card h3 {
-    font-size: 4rem;
+    font-size: clamp(3.2rem, 14vw, 4.7rem);
+    line-height: 1;
   }
 
   .location-card-footer {
@@ -1299,8 +1315,17 @@ footer {
   }
 
   .ministry-item {
-    min-height: 430px;
+    min-height: 400px;
     padding: 22px 20px;
+  }
+
+  .ministry-item h3 {
+    font-size: clamp(2.5rem, 11.5vw, 4.2rem);
+    line-height: 1.04;
+  }
+
+  .community-card h3 {
+    font-size: clamp(2.8rem, 12.5vw, 4.6rem);
   }
 
   .image-ministry {
@@ -1311,15 +1336,21 @@ footer {
 
   .house-section,
   .house-copy {
-    min-height: 870px;
+    min-height: max(860px, 100svh);
   }
 
   .house-copy {
+    grid-template-rows: auto 1fr auto auto;
+    row-gap: 26px;
     padding: 34px 18px 42px;
   }
 
   .house-pretitle {
     align-self: end;
+  }
+
+  .house-copy h2 {
+    align-self: start;
   }
 
   .house-footer {
@@ -1338,7 +1369,8 @@ footer {
   }
 
   .visit-card-brand strong {
-    font-size: 4.8rem;
+    font-size: clamp(3.8rem, 18vw, 5.4rem);
+    line-height: 1;
   }
 
   .visit-details {
@@ -1369,7 +1401,8 @@ footer {
 
   .footer-brand {
     margin-bottom: 80px;
-    font-size: 20vw;
+    font-size: clamp(4rem, 17vw, 7rem);
+    line-height: 0.96;
   }
 
   .footer-brand span:last-child {
@@ -1392,6 +1425,61 @@ footer {
 
   .confirmation-page {
     padding: 110px 18px 60px;
+  }
+
+  .button {
+    max-width: 100%;
+    white-space: normal;
+  }
+}
+
+@media (max-width: 430px) {
+  .hero h1 {
+    font-size: clamp(3.35rem, 16.2vw, 4.5rem);
+  }
+
+  .hero-content {
+    padding-right: 16px;
+    padding-left: 16px;
+  }
+
+  .hero-bottom,
+  .button-row {
+    width: 100%;
+  }
+
+  .image-card {
+    height: 470px;
+  }
+
+  .image-card-side {
+    width: 86%;
+    height: 390px;
+  }
+
+  .location-card-footer a,
+  .ministry-item a {
+    gap: 12px;
+  }
+
+  .house-footer .button {
+    width: 100%;
+  }
+
+  .visit-actions .button {
+    width: 100%;
+  }
+
+  .visit-card-brand strong {
+    font-size: clamp(3rem, 17vw, 4.5rem);
+  }
+
+  .footer-links {
+    grid-template-columns: 1fr;
+  }
+
+  .footer-links > div:last-child {
+    grid-column: auto;
   }
 }
 
