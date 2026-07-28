@@ -1,4 +1,5 @@
 import { ContactForm } from "./contact-form";
+import { HeroTitle } from "./hero-title";
 
 const whatsappTiming =
   "https://wa.me/919048065353?text=Hello%20Jesus%20Campaign%20Church%2C%20I%20would%20like%20to%20know%20the%20current%20service%20timings.";
@@ -53,10 +54,7 @@ export default function Home() {
           <div className="hero-shade" aria-hidden="true" />
           <div className="hero-content">
             <p className="eyebrow light">Thiruvananthapuram • Wayanad</p>
-            <h1 id="hero-title">
-              <span>JESUS</span>
-              <span>CAMPAIGN</span>
-            </h1>
+            <HeroTitle />
             <div className="hero-bottom">
               <p>
                 A church family growing in the presence of God, rooted in His
