@@ -1,5 +1,6 @@
 import { ContactForm } from "./contact-form";
 import { HeroTitle } from "./hero-title";
+import { ScrollEffects } from "./scroll-effects";
 
 const whatsappTiming =
   "https://wa.me/919048065353?text=Hello%20Jesus%20Campaign%20Church%2C%20I%20would%20like%20to%20know%20the%20current%20service%20timings.";
@@ -9,21 +10,23 @@ const pattomDirections =
 export default function Home() {
   return (
     <>
+      <ScrollEffects />
+
       <a className="skip-link" href="#main-content">
         Skip to content
       </a>
 
       <header className="site-header">
         <a className="wordmark" href="#top" aria-label="Jesus Campaign Church home">
-          <span>JESUS CAMPAIGN</span>
-          <span>CHURCH</span>
+          <span>JC</span>
+          <small>Jesus Campaign</small>
         </a>
 
         <nav className="desktop-nav" aria-label="Primary navigation">
           <a href="#about">About</a>
           <a href="#locations">Locations</a>
           <a href="#ministries">Ministries</a>
-          <a href="#house-of-worship">House of Worship</a>
+          <a href="#house-of-worship">Youth</a>
           <a className="nav-cta" href="#visit">
             Plan a visit
           </a>
@@ -46,15 +49,18 @@ export default function Home() {
 
       <main id="main-content">
         <section className="hero" id="top" aria-labelledby="hero-title">
-          <img
-            className="hero-image"
-            src="/images/house-of-worship.png"
-            alt="Jesus Campaign church community gathered for worship"
-          />
-          <div className="hero-shade" aria-hidden="true" />
           <div className="hero-content">
-            <p className="eyebrow light">Thiruvananthapuram • Wayanad</p>
+            <p className="eyebrow light">Thiruvananthapuram · Wayanad</p>
             <HeroTitle />
+          </div>
+
+          <div className="hero-media">
+            <img
+              className="hero-image"
+              src="/images/house-of-worship.png"
+              alt="Jesus Campaign church community gathered for worship"
+            />
+            <div className="hero-shade" aria-hidden="true" />
             <div className="hero-bottom">
               <p>
                 A church family growing in the presence of God, rooted in His
@@ -64,20 +70,22 @@ export default function Home() {
                 <a className="button button-light" href="#visit">
                   Plan your visit <span aria-hidden="true">↗</span>
                 </a>
-                <a className="text-link light-link" href="#about">
-                  Discover our church <span aria-hidden="true">↓</span>
+                <a className="button button-ghost-light" href="#about">
+                  Discover our church
                 </a>
               </div>
             </div>
+
+            <a className="location-tag" href="#locations">
+              <span>
+                <small>Main location</small>
+                <strong>Pattom</strong>
+              </span>
+              <span>Thiruvananthapuram, Kerala</span>
+            </a>
           </div>
-          <a className="location-tag" href="#locations">
-            <span>
-              <small>Main location</small>
-              <strong>Pattom</strong>
-            </span>
-            <span>Thiruvananthapuram, Kerala</span>
-          </a>
-          <span className="scroll-note">Scroll to explore</span>
+
+          <span className="scroll-note">Scroll to explore ↓</span>
         </section>
 
         <div className="marquee" aria-label="Our values">
@@ -98,68 +106,82 @@ export default function Home() {
         </div>
 
         <section className="section about" id="about">
-          <div className="section-kicker">01 — About us</div>
-          <div className="about-heading">
-            <h2>
+          <div className="section-kicker" data-reveal>
+            01 — About us
+          </div>
+
+          <div className="about-intro">
+            <h2 data-reveal>
               Come as
               <br />
-              <em>you are.</em>
+              you are.
             </h2>
-            <p className="lede">There is room for you.</p>
+            <div className="about-copy" data-reveal>
+              <p className="lede">There is room for you.</p>
+              <p>
+                Church is more than a Sunday gathering. It is a community
+                learning to follow Jesus together.
+              </p>
+              <p>
+                At Jesus Campaign Church, we gather to worship, receive the
+                Word, pray for one another, and carry the hope of Christ into
+                our homes, workplaces, schools, and cities.
+              </p>
+              <a className="button button-outline" href="#ministries">
+                Find your next step <span aria-hidden="true">↘</span>
+              </a>
+            </div>
           </div>
-          <div className="about-copy">
-            <p className="large-copy">
-              Church is more than a Sunday gathering. It is a community
-              learning to follow Jesus together.
-            </p>
-            <p>
-              At Jesus Campaign Church, we gather to worship, receive the Word,
-              pray for one another, and carry the hope of Christ into our
-              homes, workplaces, schools, and cities.
-            </p>
-            <a className="text-link dark-link" href="#ministries">
-              Find your next step <span aria-hidden="true">↘</span>
-            </a>
+
+          <div className="story-images" data-reveal>
+            <figure className="image-card image-card-main">
+              <img
+                src="/images/sunday-worship.png"
+                alt="Worship gathering at Jesus Campaign Church"
+              />
+              <figcaption>
+                <span>Worship</span>
+                <span>Presence over performance.</span>
+              </figcaption>
+            </figure>
+            <figure className="image-card image-card-side">
+              <img
+                src="/images/worship-circle.jpg"
+                alt="Jesus Campaign church community gathered for worship"
+              />
+              <figcaption>
+                <span>Community</span>
+                <span>Faith grows together.</span>
+              </figcaption>
+            </figure>
           </div>
-          <figure className="image-card image-card-main">
-            <img
-              src="/images/sunday-worship.png"
-              alt="Worship gathering at Jesus Campaign Church"
-            />
-            <figcaption>
-              <span>Worship</span>
-              <span>Presence over performance.</span>
-            </figcaption>
-          </figure>
-          <figure className="image-card image-card-side">
-            <img
-              src="/images/worship-circle.jpg"
-              alt="Jesus Campaign church community gathered for worship"
-            />
-            <figcaption>
-              <span>Community</span>
-              <span>Faith grows together.</span>
-            </figcaption>
-          </figure>
         </section>
 
         <section className="section locations" id="locations">
-          <div className="section-kicker light">02 — One church, two locations</div>
-          <div className="locations-intro">
+          <div className="section-kicker light" data-reveal>
+            02 — One church, two locations
+          </div>
+          <div className="locations-intro" data-reveal>
             <h2>
               Find your
               <br />
-              <em>place.</em>
+              place.
             </h2>
             <p>
               Wherever you are in your journey, you are welcome to join us.
             </p>
           </div>
+
           <div className="location-grid">
-            <article className="location-card featured">
-              <div className="location-number">Location 01</div>
-              <div>
-                <p className="mini-label">Main campus</p>
+            <article className="location-card" data-reveal>
+              <div className="location-visual">
+                <img
+                  src="/images/prayer-gathering.png"
+                  alt="Jesus Campaign Church gathering in Pattom"
+                />
+              </div>
+              <div className="location-content">
+                <div className="location-number">Location 01 · Main campus</div>
                 <h3>Pattom</h3>
                 <p>
                   Basement Floor, F Square Building,
@@ -168,10 +190,11 @@ export default function Home() {
                   <br />
                   Thiruvananthapuram, Kerala 695004
                 </p>
-              </div>
-              <div className="location-card-footer">
-                <p>Service timing: Please call before visiting</p>
+                <p className="service-note">
+                  Service timing: Please call before visiting
+                </p>
                 <a
+                  className="location-link"
                   href={pattomDirections}
                   target="_blank"
                   rel="noreferrer"
@@ -181,16 +204,26 @@ export default function Home() {
                 </a>
               </div>
             </article>
-            <article className="location-card">
-              <div className="location-number">Location 02</div>
-              <div>
-                <p className="mini-label">Branch</p>
+
+            <article className="location-card reverse" data-reveal>
+              <div className="location-visual">
+                <img
+                  src="/images/youth-speaker.png"
+                  alt="Jesus Campaign church gathering"
+                />
+              </div>
+              <div className="location-content">
+                <div className="location-number">Location 02 · Branch</div>
                 <h3>Wayanad</h3>
                 <p>Wayanad, Kerala</p>
-              </div>
-              <div className="location-card-footer">
-                <p>Call us for the current address and gathering details</p>
-                <a href="tel:+919048065353" aria-label="Call for Wayanad branch details">
+                <p className="service-note">
+                  Call us for the current address and gathering details
+                </p>
+                <a
+                  className="location-link"
+                  href="tel:+919048065353"
+                  aria-label="Call for Wayanad branch details"
+                >
                   Call for details <span aria-hidden="true">↗</span>
                 </a>
               </div>
@@ -199,14 +232,19 @@ export default function Home() {
         </section>
 
         <section className="section ministries" id="ministries">
-          <div className="section-kicker">03 — Take your next step</div>
-          <h2>
-            More than a
-            <br />
-            <em>Sunday.</em>
-          </h2>
+          <div className="section-kicker" data-reveal>
+            03 — Take your next step
+          </div>
+          <div className="ministries-heading" data-reveal>
+            <h2>
+              More than
+              <br />a Sunday.
+            </h2>
+            <p>Swipe or scroll to find your place in the life of our church.</p>
+          </div>
+
           <div className="ministry-list">
-            <article className="ministry-item">
+            <article className="ministry-item worship-card" data-reveal>
               <span className="ministry-no">01 / Worship</span>
               <h3>
                 Gather.
@@ -217,7 +255,7 @@ export default function Home() {
               </h3>
               <p>Make room for God through worship, prayer, and the Word.</p>
             </article>
-            <article className="ministry-item youth-card">
+            <article className="ministry-item youth-card" data-reveal>
               <span className="ministry-no">02 / Youth</span>
               <h3>
                 A generation
@@ -226,16 +264,17 @@ export default function Home() {
               </h3>
               <p>Real faith, honest community, and a bold life of purpose.</p>
               <a href="#house-of-worship" aria-label="Explore Jesus Campaign Youth">
-                Explore <span aria-hidden="true">↘</span>
+                Explore <span aria-hidden="true">↗</span>
               </a>
             </article>
-            <article className="ministry-item image-ministry">
+            <article className="ministry-item image-ministry" data-reveal>
               <img
                 src="/images/youth-prayer.jpg"
                 alt="Young people attending a Jesus Campaign gathering"
               />
+              <span>Young people seeking God together.</span>
             </article>
-            <article className="ministry-item prayer-card">
+            <article className="ministry-item prayer-card" data-reveal>
               <span className="ministry-no">03 / Prayer</span>
               <h3>
                 We would love
@@ -243,10 +282,10 @@ export default function Home() {
                 to pray with you.
               </h3>
               <a href="#contact">
-                Share a prayer request <span aria-hidden="true">↘</span>
+                Share a prayer request <span aria-hidden="true">↗</span>
               </a>
             </article>
-            <article className="ministry-item community-card">
+            <article className="ministry-item community-card" data-reveal>
               <span className="ministry-no">04 / Community</span>
               <h3>
                 Find people
@@ -254,54 +293,61 @@ export default function Home() {
                 to walk with.
               </h3>
               <a href="#contact">
-                Get connected <span aria-hidden="true">↘</span>
+                Get connected <span aria-hidden="true">↗</span>
               </a>
             </article>
           </div>
+          <p className="swipe-note">Swipe →</p>
         </section>
 
         <section className="house-section" id="house-of-worship">
-          <img
-            src="/images/youth-gathering.png"
-            alt="House of Worship event by Jesus Campaign Youth"
-          />
-          <div className="house-overlay" />
-          <div className="house-copy">
-            <div className="section-kicker light">04 — Jesus Campaign Youth</div>
-            <p className="house-pretitle">
-              A space for a generation to seek God
-            </p>
-            <h2>
-              House
-              <br />
-              <em>of worship</em>
-            </h2>
-            <div className="house-footer">
-              <p>
-                More than an event. A room filled with prayer, praise, the
-                Word, and young people hungry for the presence of God.
+          <div className="house-frame" data-reveal>
+            <img
+              src="/images/youth-gathering.png"
+              alt="House of Worship event by Jesus Campaign Youth"
+            />
+            <div className="house-overlay" />
+            <div className="house-copy">
+              <div className="section-kicker light">
+                04 — Jesus Campaign Youth
+              </div>
+              <p className="house-pretitle">
+                A space for a generation to seek God
               </p>
-              <a
-                className="button button-light"
-                href={whatsappTiming}
-                target="_blank"
-                rel="noreferrer"
-              >
-                Ask about the next gathering <span aria-hidden="true">↗</span>
-              </a>
+              <h2>
+                House of
+                <br />
+                Worship
+              </h2>
+              <div className="house-footer">
+                <p>
+                  More than an event. A room filled with prayer, praise, the
+                  Word, and young people hungry for the presence of God.
+                </p>
+                <a
+                  className="button button-light"
+                  href={whatsappTiming}
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  Ask about the next gathering <span aria-hidden="true">↗</span>
+                </a>
+              </div>
             </div>
           </div>
         </section>
 
         <section className="section visit" id="visit">
-          <div className="section-kicker">05 — Plan your visit</div>
-          <div className="visit-intro">
+          <div className="section-kicker" data-reveal>
+            05 — Plan your visit
+          </div>
+          <div className="visit-intro" data-reveal>
             <h2>
               Your first
               <br />
               Sunday
               <br />
-              <em>starts here.</em>
+              starts here.
             </h2>
             <p>
               New to church, returning after a long time, or simply looking
@@ -309,10 +355,12 @@ export default function Home() {
               you.
             </p>
           </div>
-          <article className="visit-card">
+
+          <article className="visit-card" data-reveal>
             <div className="visit-card-brand">
               <span>Jesus Campaign Church</span>
               <strong>Pattom</strong>
+              <small>Thiruvananthapuram, Kerala</small>
             </div>
             <div className="visit-details">
               <div>
@@ -329,37 +377,37 @@ export default function Home() {
                 <p className="mini-label">Contact</p>
                 <a href="tel:+919048065353">+91 90480 65353</a>
               </div>
-            </div>
-            <div className="visit-actions">
-              <a
-                className="button button-dark"
-                href={pattomDirections}
-                target="_blank"
-                rel="noreferrer"
-                aria-label="Get directions to Pattom"
-              >
-                Get directions <span aria-hidden="true">↗</span>
-              </a>
-              <a
-                className="button button-outline"
-                href={whatsappTiming}
-                target="_blank"
-                rel="noreferrer"
-                aria-label="Message Jesus Campaign Church on WhatsApp"
-              >
-                Ask on WhatsApp <span aria-hidden="true">↗</span>
-              </a>
+              <div className="visit-actions">
+                <a
+                  className="button button-light"
+                  href={pattomDirections}
+                  target="_blank"
+                  rel="noreferrer"
+                  aria-label="Get directions to Pattom"
+                >
+                  Get directions <span aria-hidden="true">↗</span>
+                </a>
+                <a
+                  className="button button-ghost-light"
+                  href={whatsappTiming}
+                  target="_blank"
+                  rel="noreferrer"
+                  aria-label="Message Jesus Campaign Church on WhatsApp"
+                >
+                  Ask on WhatsApp
+                </a>
+              </div>
             </div>
           </article>
         </section>
 
         <section className="contact" id="contact">
-          <div className="contact-heading">
+          <div className="contact-heading" data-reveal>
             <div className="section-kicker light">Connect with us</div>
             <h2>
               Let’s
               <br />
-              <em>talk.</em>
+              talk.
             </h2>
             <p>
               Share a prayer request, ask a question, or tell us you are
@@ -367,7 +415,9 @@ export default function Home() {
             </p>
             <a href="tel:+919048065353">+91 90480 65353</a>
           </div>
-          <ContactForm />
+          <div data-reveal>
+            <ContactForm />
+          </div>
         </section>
       </main>
 
