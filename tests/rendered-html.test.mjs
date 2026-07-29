@@ -38,6 +38,9 @@ test("server-renders the complete church homepage", async () => {
   assert.match(html, /Come as/);
   assert.match(html, /One church, two locations/);
   assert.match(html, /House of Worship/i);
+  assert.match(html, /Gallery — Life together/i);
+  assert.match(html, /community-notes\.png/i);
+  assert.equal((html.match(/class="gallery-item"/g) ?? []).length, 20);
   assert.match(html, /Plan your visit/i);
   assert.match(html, /Skip to content/i);
   assert.doesNotMatch(html, /codex-preview|SkeletonPreview|Your site is taking shape/i);

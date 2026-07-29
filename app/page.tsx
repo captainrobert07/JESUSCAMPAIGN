@@ -7,6 +7,109 @@ const whatsappTiming =
 const pattomDirections =
   "https://www.google.com/maps/search/?api=1&query=F+Square+Building+Lekshmi+Nagar+Pattom+Thiruvananthapuram+Kerala+695004";
 
+const galleryImages = [
+  {
+    src: "/images/youth-bassist.png",
+    alt: "Young musician playing bass during a Jesus Campaign gathering",
+    label: "Worship",
+  },
+  {
+    src: "/images/pastor-message.png",
+    alt: "Pastor sharing the Word at Jesus Campaign Church",
+    label: "The Word",
+  },
+  {
+    src: "/images/worship-circle.png",
+    alt: "Jesus Campaign church family gathered closely for worship",
+    label: "Together",
+  },
+  {
+    src: "/images/bassist-white.png",
+    alt: "Bass player serving on the Jesus Campaign worship team",
+    label: "Serve",
+  },
+  {
+    src: "/images/speaker-woman.png",
+    alt: "Woman speaking at a Jesus Campaign Church gathering",
+    label: "Testimony",
+  },
+  {
+    src: "/images/community-group.png",
+    alt: "Young people sharing and learning together",
+    label: "Community",
+  },
+  {
+    src: "/images/pastor-stage.png",
+    alt: "Pastor teaching from the stage at Jesus Campaign Church",
+    label: "Teaching",
+  },
+  {
+    src: "/images/worship-duo.png",
+    alt: "Worship leaders singing and playing keyboard",
+    label: "Praise",
+  },
+  {
+    src: "/images/testimony-night.png",
+    alt: "Woman sharing during an evening church gathering",
+    label: "Faith",
+  },
+  {
+    src: "/images/community-notes.png",
+    alt: "Young people writing notes and sharing conversation",
+    label: "Belong",
+  },
+  {
+    src: "/images/worship-prayer.png",
+    alt: "Church leaders praying together during worship",
+    label: "Prayer",
+  },
+  {
+    src: "/images/youth-gathering-wide.png",
+    alt: "Young people gathered for a Jesus Campaign Youth meeting",
+    label: "Youth",
+  },
+  {
+    src: "/images/hero-worship.png",
+    alt: "Jesus Campaign congregation worshipping with raised hands",
+    label: "Encounter",
+  },
+  {
+    src: "/images/worship-team.png",
+    alt: "Jesus Campaign worship team leading the congregation",
+    label: "Worship team",
+  },
+  {
+    src: "/images/youth-testimony.png",
+    alt: "Young woman sharing a testimony with the church",
+    label: "Stories",
+  },
+  {
+    src: "/images/pattom-hall.png",
+    alt: "Jesus Campaign Church congregation gathered at Pattom",
+    label: "Pattom",
+  },
+  {
+    src: "/images/youth-retreat-speaker.png",
+    alt: "Speaker addressing a Jesus Campaign youth retreat",
+    label: "Youth retreat",
+  },
+  {
+    src: "/images/house-of-worship-youth.png",
+    alt: "Young people attending a House of Worship gathering",
+    label: "House of Worship",
+  },
+  {
+    src: "/images/sound-desk-prayer.png",
+    alt: "Congregation praying during a worship gathering",
+    label: "Presence",
+  },
+  {
+    src: "/images/church-service.png",
+    alt: "Jesus Campaign church family gathered for a service",
+    label: "Church family",
+  },
+];
+
 export default function Home() {
   return (
     <>
@@ -26,7 +129,7 @@ export default function Home() {
           <a href="#about">About</a>
           <a href="#locations">Locations</a>
           <a href="#ministries">Ministries</a>
-          <a href="#house-of-worship">Youth</a>
+          <a href="#gallery">Gallery</a>
           <a className="nav-cta" href="#visit">
             Plan a visit
           </a>
@@ -41,6 +144,7 @@ export default function Home() {
             <a href="#about">About</a>
             <a href="#locations">Locations</a>
             <a href="#ministries">Ministries</a>
+            <a href="#gallery">Gallery</a>
             <a href="#house-of-worship">House of Worship</a>
             <a href="#visit">Plan a visit</a>
           </nav>
@@ -137,7 +241,7 @@ export default function Home() {
             <figure className="image-card image-card-main">
               <img
                 src="/images/community-notes.png"
-                alt="Worship gathering at Jesus Campaign Church"
+                alt="Young people writing notes and sharing conversation at Jesus Campaign Church"
               />
               <figcaption>
                 <span>Worship</span>
@@ -147,7 +251,7 @@ export default function Home() {
             <figure className="image-card image-card-side">
               <img
                 src="/images/community-group.png"
-                alt="Jesus Campaign church community gathered for worship"
+                alt="Young people sharing and learning together at Jesus Campaign Church"
               />
               <figcaption>
                 <span>Community</span>
@@ -300,6 +404,34 @@ export default function Home() {
           <p className="swipe-note">Swipe →</p>
         </section>
 
+        <section className="section gallery" id="gallery">
+          <div className="section-kicker light" data-reveal>
+            Gallery — Life together
+          </div>
+          <div className="gallery-heading" data-reveal>
+            <h2>
+              Moments of
+              <br />
+              faith.
+            </h2>
+            <p>
+              Worship, prayer, friendship, teaching, and a generation learning
+              to follow Jesus together.
+            </p>
+          </div>
+          <div className="gallery-grid">
+            {galleryImages.map((image, index) => (
+              <figure className="gallery-item" data-reveal key={image.src}>
+                <img src={image.src} alt={image.alt} loading="lazy" />
+                <figcaption>
+                  <span>{String(index + 1).padStart(2, "0")}</span>
+                  <span>{image.label}</span>
+                </figcaption>
+              </figure>
+            ))}
+          </div>
+        </section>
+
         <section className="house-section" id="house-of-worship">
           <div className="house-frame" data-reveal>
             <img
@@ -436,6 +568,7 @@ export default function Home() {
             <h3>Explore</h3>
             <a href="#about">About</a>
             <a href="#ministries">Ministries</a>
+            <a href="#gallery">Gallery</a>
             <a href="#house-of-worship">House of Worship</a>
           </div>
           <div>

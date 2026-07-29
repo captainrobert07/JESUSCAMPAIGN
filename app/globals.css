@@ -1021,8 +1021,84 @@ address {
   text-transform: uppercase;
 }
 
+.gallery {
+  overflow: hidden;
+  border-radius: clamp(42px, 6vw, 84px) clamp(42px, 6vw, 84px) 0 0;
+  background: var(--ink);
+  color: var(--paper-bright);
+}
+
+.gallery-heading {
+  display: grid;
+  grid-template-columns: minmax(0, 1.15fr) minmax(260px, 0.45fr);
+  gap: 60px;
+  align-items: end;
+  margin: clamp(70px, 9vw, 130px) 0 clamp(70px, 8vw, 110px);
+}
+
+.gallery-heading p {
+  margin: 0 0 12px;
+  color: rgba(255, 255, 255, 0.66);
+}
+
+.gallery-grid {
+  columns: 3;
+  column-gap: 18px;
+}
+
+.gallery-item {
+  position: relative;
+  overflow: hidden;
+  margin: 0 0 18px;
+  break-inside: avoid;
+  border-radius: clamp(22px, 2vw, 34px);
+  background: #171715;
+}
+
+.gallery-item img {
+  width: 100%;
+  height: auto;
+  transition:
+    filter 500ms ease,
+    transform 800ms cubic-bezier(0.2, 0.75, 0.25, 1);
+}
+
+.gallery-item::after {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(16, 15, 14, 0.64), transparent 36%);
+  content: "";
+  pointer-events: none;
+}
+
+.gallery-item figcaption {
+  position: absolute;
+  z-index: 2;
+  right: 20px;
+  bottom: 18px;
+  left: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  color: var(--paper-bright);
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.gallery-item figcaption span:first-child {
+  color: rgba(255, 255, 255, 0.52);
+}
+
+.gallery-item:hover img {
+  filter: saturate(1.08);
+  transform: scale(1.025);
+}
+
 .house-section {
-  padding: 0 var(--page-pad) clamp(100px, 12vw, 180px);
+  padding: clamp(100px, 12vw, 180px) var(--page-pad);
   background: var(--paper);
 }
 
@@ -1489,6 +1565,7 @@ footer {
   .about-intro,
   .locations-intro,
   .ministries-heading,
+  .gallery-heading,
   .visit-intro {
     grid-template-columns: 1fr;
   }
@@ -1537,6 +1614,10 @@ footer {
 
   .ministry-list {
     grid-auto-columns: minmax(340px, 76vw);
+  }
+
+  .gallery-grid {
+    columns: 2;
   }
 
   .house-frame,
@@ -1662,6 +1743,7 @@ footer {
   .about-intro,
   .locations-intro,
   .ministries-heading,
+  .gallery-heading,
   .visit-intro {
     gap: 46px;
     margin-top: 64px;
@@ -1732,6 +1814,18 @@ footer {
 
   .image-ministry {
     padding: 0;
+  }
+
+  .gallery {
+    border-radius: 42px 42px 0 0;
+  }
+
+  .gallery-grid {
+    columns: 1;
+  }
+
+  .gallery-item {
+    border-radius: 28px;
   }
 
   .house-section {
