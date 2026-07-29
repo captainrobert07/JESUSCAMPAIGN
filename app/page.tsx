@@ -57,7 +57,7 @@ export default function Home() {
           <div className="hero-media">
             <img
               className="hero-image"
-              src="/images/house-of-worship.png"
+              src="/images/hero-worship.png"
               alt="Jesus Campaign church community gathered for worship"
             />
             <div className="hero-shade" aria-hidden="true" />
@@ -136,7 +136,7 @@ export default function Home() {
           <div className="story-images" data-reveal>
             <figure className="image-card image-card-main">
               <img
-                src="/images/sunday-worship.png"
+                src="/images/community-notes.png"
                 alt="Worship gathering at Jesus Campaign Church"
               />
               <figcaption>
@@ -146,7 +146,7 @@ export default function Home() {
             </figure>
             <figure className="image-card image-card-side">
               <img
-                src="/images/worship-circle.jpg"
+                src="/images/community-group.png"
                 alt="Jesus Campaign church community gathered for worship"
               />
               <figcaption>
@@ -176,7 +176,7 @@ export default function Home() {
             <article className="location-card" data-reveal>
               <div className="location-visual">
                 <img
-                  src="/images/prayer-gathering.png"
+                  src="/images/pattom-hall.png"
                   alt="Jesus Campaign Church gathering in Pattom"
                 />
               </div>
@@ -208,8 +208,8 @@ export default function Home() {
             <article className="location-card reverse" data-reveal>
               <div className="location-visual">
                 <img
-                  src="/images/youth-speaker.png"
-                  alt="Jesus Campaign church gathering"
+                  src="/images/church-service.png"
+                  alt="Jesus Campaign church congregation gathered for worship"
                 />
               </div>
               <div className="location-content">
@@ -269,7 +269,7 @@ export default function Home() {
             </article>
             <article className="ministry-item image-ministry" data-reveal>
               <img
-                src="/images/youth-prayer.jpg"
+                src="/images/youth-bassist.png"
                 alt="Young people attending a Jesus Campaign gathering"
               />
               <span>Young people seeking God together.</span>
@@ -303,7 +303,7 @@ export default function Home() {
         <section className="house-section" id="house-of-worship">
           <div className="house-frame" data-reveal>
             <img
-              src="/images/youth-gathering.png"
+              src="/images/house-of-worship-youth.png"
               alt="House of Worship event by Jesus Campaign Youth"
             />
             <div className="house-overlay" />
