@@ -438,8 +438,8 @@ export default function Home() {
         <section className="house-section" id="house-of-worship">
           <div className="house-frame" data-reveal>
             <img
-              src="/images/house-of-worship-logo.png"
-              alt="House of Worship event logo"
+              src="/images/house-of-worship-youth.png"
+              alt="Young people attending a House of Worship gathering"
             />
             <div className="house-overlay" />
             <div className="house-copy">

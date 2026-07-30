@@ -12,10 +12,10 @@ export const metadata: Metadata = {
       "A 12-hour continuous worship gathering at Pattom, Trivandrum. Register free with Jesus Campaign Church.",
     images: [
       {
-        url: "/images/house-of-worship-logo.png",
-        width: 1249,
-        height: 1249,
-        alt: "House of Worship logo",
+        url: "/images/house-of-worship-youth.png",
+        width: 1448,
+        height: 1086,
+        alt: "Young people attending a House of Worship gathering",
       },
     ],
   },
@@ -24,7 +24,7 @@ export const metadata: Metadata = {
     title: "House of Worship | August 29",
     description:
       "A 12-hour continuous worship gathering at Pattom, Trivandrum. Register free.",
-    images: ["/images/house-of-worship-logo.png"],
+    images: ["/images/house-of-worship-youth.png"],
   },
 };
 
@@ -42,12 +42,13 @@ export default function HouseOfWorshipPage() {
       </header>
 
       <section className="event-hero" aria-labelledby="event-title">
-        <div className="event-logo-panel">
+        <figure className="event-photo-panel">
           <img
-            src="/images/house-of-worship-logo.png"
-            alt="House of Worship logo"
+            src="/images/house-of-worship-youth.png"
+            alt="Young people attending a House of Worship gathering"
           />
-        </div>
+          <figcaption>Jesus Campaign Youth · Pattom, Trivandrum</figcaption>
+        </figure>
         <div className="event-copy">
           <p className="eyebrow light">Jesus Campaign Youth presents</p>
           <h1 id="event-title">

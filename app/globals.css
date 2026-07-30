@@ -1143,8 +1143,7 @@ address {
 }
 
 .house-frame > img {
-  padding: clamp(18px, 3vw, 44px);
-  object-fit: contain;
+  object-fit: cover;
   object-position: center;
   transition: transform 1s cubic-bezier(0.2, 0.75, 0.25, 1);
 }
@@ -1401,27 +1400,44 @@ address {
     url("/images/sound-desk-prayer.png") center / cover;
 }
 
-.event-logo-panel {
+.event-photo-panel {
   position: relative;
+  margin: 0;
   overflow: hidden;
   border: 1px solid rgba(255, 255, 255, 0.14);
   border-radius: var(--radius-large);
-  background: #030303;
+  background: #151514;
   box-shadow: 0 30px 90px rgba(0, 0, 0, 0.36);
 }
 
-.event-logo-panel::after {
+.event-photo-panel::after {
   position: absolute;
   inset: 0;
-  background: radial-gradient(circle at 50% 22%, rgba(220, 28, 36, 0.22), transparent 44%);
+  background:
+    linear-gradient(to top, rgba(12, 11, 10, 0.58), transparent 58%),
+    radial-gradient(circle at 50% 22%, rgba(220, 96, 57, 0.24), transparent 46%);
   content: "";
   pointer-events: none;
 }
 
-.event-logo-panel img {
+.event-photo-panel img {
+  display: block;
   width: 100%;
-  aspect-ratio: 1;
+  aspect-ratio: 4 / 3;
   object-fit: cover;
+}
+
+.event-photo-panel figcaption {
+  position: absolute;
+  z-index: 2;
+  right: 22px;
+  bottom: 20px;
+  left: 22px;
+  color: rgba(255, 255, 255, 0.78);
+  font-size: 0.64rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
 }
 
 .event-copy h1 {
@@ -1528,7 +1544,7 @@ address {
 .event-confirmation {
   background:
     linear-gradient(rgba(18, 17, 15, 0.76), rgba(18, 17, 15, 0.9)),
-    url("/images/house-of-worship-logo.png") center / min(92vw, 820px) no-repeat,
+    url("/images/sound-desk-prayer.png") center / cover,
     var(--ink);
 }
 
@@ -1735,7 +1751,7 @@ footer {
     padding-top: 28px;
   }
 
-  .event-logo-panel {
+  .event-photo-panel {
     width: min(100%, 520px);
   }
 
