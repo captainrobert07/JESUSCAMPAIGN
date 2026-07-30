@@ -240,8 +240,8 @@ export default function Home() {
           <div className="story-images" data-reveal>
             <figure className="image-card image-card-main">
               <img
-                src="/images/community-notes.png"
-                alt="Young people writing notes and sharing conversation at Jesus Campaign Church"
+                src="/images/worship-prayer.png"
+                alt="Jesus Campaign worship leaders praying together"
               />
               <figcaption>
                 <span>Worship</span>
