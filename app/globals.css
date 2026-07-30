@@ -380,7 +380,7 @@ address {
   width: 100%;
   display: flex;
   justify-content: center;
-  margin: 18px auto -42px;
+  margin: 18px auto -34px;
   isolation: isolate;
 }
 
@@ -417,7 +417,7 @@ address {
 .hero-logo-title {
   position: relative;
   display: block;
-  width: min(780px, 64vw);
+  width: min(560px, 52vw);
   max-width: 100%;
   aspect-ratio: 1.45;
   overflow: hidden;
@@ -465,7 +465,7 @@ address {
   position: relative;
   z-index: 2;
   width: calc(100% - (var(--page-pad) * 2));
-  height: clamp(560px, 54vw, 720px);
+  height: clamp(540px, 45vw, 620px);
   margin: 0 var(--page-pad);
   overflow: hidden;
   border-radius: var(--radius-large);
@@ -503,7 +503,7 @@ address {
 .hero-bottom {
   position: absolute;
   z-index: 2;
-  top: 48%;
+  top: 42%;
   left: 50%;
   width: min(610px, calc(100% - 40px));
   text-align: center;
