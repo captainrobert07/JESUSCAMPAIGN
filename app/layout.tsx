@@ -14,7 +14,7 @@ const cormorant = Cormorant_Garamond({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://jesuscampaign.vercel.app"),
+  metadataBase: new URL("https://jesus-campaign.vercel.app"),
   applicationName: "Jesus Campaign Church",
   title: {
     default: "Jesus Campaign Church | Trivandrum & Wayanad",
