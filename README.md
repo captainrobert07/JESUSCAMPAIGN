@@ -1,6 +1,6 @@
 # Jesus Campaign Church
 
-Official website for Jesus Campaign Church in Pattom, Thiruvananthapuram,
+Official website for Jesus Campaign Church in Pattom, Trivandrum,
 with a branch in Wayanad, Kerala.
 
 ## Local development

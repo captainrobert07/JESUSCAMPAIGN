@@ -5,7 +5,7 @@ import { ScrollEffects } from "./scroll-effects";
 const whatsappTiming =
   "https://wa.me/919048065353?text=Hello%20Jesus%20Campaign%20Church%2C%20I%20would%20like%20to%20know%20the%20current%20service%20timings.";
 const pattomDirections =
-  "https://www.google.com/maps/search/?api=1&query=F+Square+Building+Lekshmi+Nagar+Pattom+Thiruvananthapuram+Kerala+695004";
+  "https://www.google.com/maps/search/?api=1&query=F+Square+Building+Lekshmi+Nagar+Pattom+Trivandrum+Kerala+695004";
 
 const galleryImages = [
   {
@@ -121,7 +121,9 @@ export default function Home() {
 
       <header className="site-header">
         <a className="wordmark" href="#top" aria-label="Jesus Campaign Church home">
-          <span>JC</span>
+          <span className="wordmark-logo">
+            <img src="/jesus-campaign-logo.png" alt="" />
+          </span>
           <small>Jesus Campaign</small>
         </a>
 
@@ -130,6 +132,7 @@ export default function Home() {
           <a href="#locations">Locations</a>
           <a href="#ministries">Ministries</a>
           <a href="#gallery">Gallery</a>
+          <a href="/house-of-worship">House of Worship</a>
           <a className="nav-cta" href="#visit">
             Plan a visit
           </a>
@@ -145,7 +148,7 @@ export default function Home() {
             <a href="#locations">Locations</a>
             <a href="#ministries">Ministries</a>
             <a href="#gallery">Gallery</a>
-            <a href="#house-of-worship">House of Worship</a>
+            <a href="/house-of-worship">House of Worship</a>
             <a href="#visit">Plan a visit</a>
           </nav>
         </details>
@@ -154,7 +157,7 @@ export default function Home() {
       <main id="main-content">
         <section className="hero" id="top" aria-labelledby="hero-title">
           <div className="hero-content">
-            <p className="eyebrow light">Thiruvananthapuram · Wayanad</p>
+            <p className="eyebrow light">Trivandrum · Wayanad</p>
             <HeroTitle />
           </div>
 
@@ -185,7 +188,7 @@ export default function Home() {
                 <small>Main location</small>
                 <strong>Pattom</strong>
               </span>
-              <span>Thiruvananthapuram, Kerala</span>
+              <span>Trivandrum, Kerala</span>
             </a>
           </div>
 
@@ -292,7 +295,7 @@ export default function Home() {
                   <br />
                   Lekshmi Nagar, Pattom,
                   <br />
-                  Thiruvananthapuram, Kerala 695004
+                  Trivandrum, Kerala 695004
                 </p>
                 <p className="service-note">
                   Service timing: Please call before visiting
@@ -367,7 +370,7 @@ export default function Home() {
                 alive in Jesus.
               </h3>
               <p>Real faith, honest community, and a bold life of purpose.</p>
-              <a href="#house-of-worship" aria-label="Explore Jesus Campaign Youth">
+              <a href="/house-of-worship" aria-label="Explore Jesus Campaign Youth">
                 Explore <span aria-hidden="true">↗</span>
               </a>
             </article>
@@ -435,16 +438,17 @@ export default function Home() {
         <section className="house-section" id="house-of-worship">
           <div className="house-frame" data-reveal>
             <img
-              src="/images/house-of-worship-youth.png"
-              alt="House of Worship event by Jesus Campaign Youth"
+              src="/images/house-of-worship-logo.png"
+              alt="House of Worship event logo"
             />
             <div className="house-overlay" />
             <div className="house-copy">
               <div className="section-kicker light">
                 04 — Jesus Campaign Youth
               </div>
+              <div className="event-pill">August 29 · 10 AM-10 PM · Pattom</div>
               <p className="house-pretitle">
-                A space for a generation to seek God
+                12 hours of continuous worship
               </p>
               <h2>
                 House of
@@ -454,15 +458,13 @@ export default function Home() {
               <div className="house-footer">
                 <p>
                   More than an event. A room filled with prayer, praise, the
-                  Word, and young people hungry for the presence of God.
+                  Word, and worship leaders gathering in Pattom, Trivandrum.
                 </p>
                 <a
                   className="button button-light"
-                  href={whatsappTiming}
-                  target="_blank"
-                  rel="noreferrer"
+                  href="/house-of-worship"
                 >
-                  Ask about the next gathering <span aria-hidden="true">↗</span>
+                  Register free <span aria-hidden="true">↗</span>
                 </a>
               </div>
             </div>
@@ -492,7 +494,7 @@ export default function Home() {
             <div className="visit-card-brand">
               <span>Jesus Campaign Church</span>
               <strong>Pattom</strong>
-              <small>Thiruvananthapuram, Kerala</small>
+              <small>Trivandrum, Kerala</small>
             </div>
             <div className="visit-details">
               <div>
@@ -502,7 +504,7 @@ export default function Home() {
                   <br />
                   Lekshmi Nagar, Pattom,
                   <br />
-                  Thiruvananthapuram, Kerala 695004
+                  Trivandrum, Kerala 695004
                 </address>
               </div>
               <div>
@@ -569,7 +571,7 @@ export default function Home() {
             <a href="#about">About</a>
             <a href="#ministries">Ministries</a>
             <a href="#gallery">Gallery</a>
-            <a href="#house-of-worship">House of Worship</a>
+            <a href="/house-of-worship">House of Worship</a>
           </div>
           <div>
             <h3>Connect</h3>
@@ -584,7 +586,7 @@ export default function Home() {
         </div>
         <div className="footer-bottom">
           <span>© 2026 Jesus Campaign Church. All rights reserved.</span>
-          <span>Thiruvananthapuram · Wayanad · Kerala</span>
+          <span>Trivandrum · Wayanad · Kerala</span>
         </div>
       </footer>
     </>

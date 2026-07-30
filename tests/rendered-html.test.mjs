@@ -31,19 +31,25 @@ test("server-renders the complete church homepage", async () => {
   const html = await response.text();
   assert.match(
     html,
-    /<title>Jesus Campaign Church \| Thiruvananthapuram &amp; Wayanad<\/title>/i,
+    /<title>Jesus Campaign Church \| Trivandrum &amp; Wayanad<\/title>/i,
   );
   assert.match(html, /JESUS/);
   assert.match(html, /CAMPAIGN/);
   assert.match(html, /Come as/);
   assert.match(html, /One church, two locations/);
   assert.match(html, /House of Worship/i);
-  assert.match(html, /Gallery — Life together/i);
+  assert.match(html, /August 29/i);
+  assert.match(html, /Register free/i);
+  assert.match(html, /Trivandrum/i);
+  assert.match(html, /Gallery/i);
   assert.match(html, /community-notes\.png/i);
   assert.equal((html.match(/class="gallery-item"/g) ?? []).length, 20);
   assert.match(html, /Plan your visit/i);
   assert.match(html, /Skip to content/i);
-  assert.doesNotMatch(html, /codex-preview|SkeletonPreview|Your site is taking shape/i);
+  assert.doesNotMatch(
+    html,
+    /codex-preview|SkeletonPreview|Your site is taking shape/i,
+  );
 });
 
 test("renders the message confirmation route and removes starter artifacts", async () => {
@@ -62,7 +68,7 @@ test("renders the message confirmation route and removes starter artifacts", asy
   ]);
 
   assert.match(page, /Jesus Campaign Church/);
-  assert.match(layout, /Jesus Campaign Church \| Thiruvananthapuram & Wayanad/);
+  assert.match(layout, /Jesus Campaign Church \| Trivandrum & Wayanad/);
   assert.doesNotMatch(packageJson, /react-loading-skeleton/);
   await Promise.all([
     assert.rejects(
@@ -72,4 +78,30 @@ test("renders the message confirmation route and removes starter artifacts", asy
       access(new URL("../app/_sites-preview/preview.css", import.meta.url)),
     ),
   ]);
+});
+
+test("renders the House of Worship registration page", async () => {
+  const response = await render("/house-of-worship");
+  assert.equal(response.status, 200);
+
+  const html = await response.text();
+  assert.match(html, /House of Worship/);
+  assert.match(html, /Twelve hours of continuous worship/i);
+  assert.match(html, /August 29/i);
+  assert.match(html, /10 AM-10 PM/i);
+  assert.match(html, /Pattom, Trivandrum/i);
+  assert.match(html, /Full name/i);
+  assert.match(html, /Contact number/i);
+  assert.match(html, /Register free/i);
+});
+
+test("renders the House of Worship registration confirmation route", async () => {
+  const response = await render("/house-of-worship/registered?name=Robert");
+  assert.equal(response.status, 200);
+
+  const html = await response.text();
+  assert.match(html, /Registration received/i);
+  assert.match(html, /Robert/);
+  assert.match(html, /in the room/i);
+  assert.match(html, /August 29/i);
 });

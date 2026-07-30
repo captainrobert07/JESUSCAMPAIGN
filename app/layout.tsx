@@ -14,35 +14,52 @@ const cormorant = Cormorant_Garamond({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://jesus-campaign.vercel.app"),
-  title: "Jesus Campaign Church | Thiruvananthapuram & Wayanad",
+  metadataBase: new URL("https://jesuscampaign.vercel.app"),
+  applicationName: "Jesus Campaign Church",
+  title: {
+    default: "Jesus Campaign Church | Trivandrum & Wayanad",
+    template: "%s | Jesus Campaign Church",
+  },
   description:
-    "Jesus Campaign Church in Pattom, Thiruvananthapuram, with a branch in Wayanad. A place to worship, grow, belong, and make Jesus known.",
+    "Jesus Campaign Church in Pattom, Trivandrum, with a branch in Wayanad. A church family growing in worship, the Word, community, and mission.",
+  keywords: [
+    "Jesus Campaign Church",
+    "Trivandrum church",
+    "Pattom church",
+    "Wayanad church",
+    "House of Worship",
+    "Kerala church",
+  ],
   openGraph: {
     type: "website",
     locale: "en_IN",
-    title: "Jesus Campaign Church | Thiruvananthapuram & Wayanad",
+    siteName: "Jesus Campaign Church",
+    title: "Jesus Campaign Church | Trivandrum & Wayanad",
     description:
-      "A church family in Thiruvananthapuram and Wayanad, Kerala.",
+      "A church family in Trivandrum and Wayanad, Kerala. Worship, grow, belong, and make Jesus known.",
     images: [
       {
         url: "/og.png",
         width: 1743,
         height: 907,
-        alt: "Jesus Campaign Church in Thiruvananthapuram and Wayanad",
+        alt: "Jesus Campaign Church in Trivandrum and Wayanad",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Jesus Campaign Church",
+    title: "Jesus Campaign Church | Trivandrum & Wayanad",
     description:
-      "A church family in Thiruvananthapuram and Wayanad, Kerala.",
+      "A church family in Trivandrum and Wayanad, Kerala.",
     images: ["/og.png"],
   },
   icons: {
-    icon: "/favicon.svg",
-    shortcut: "/favicon.svg",
+    icon: [
+      { url: "/jesus-campaign-logo.png", type: "image/png" },
+      { url: "/favicon.svg", type: "image/svg+xml" },
+    ],
+    shortcut: "/jesus-campaign-logo.png",
+    apple: "/jesus-campaign-logo.png",
   },
 };
 
