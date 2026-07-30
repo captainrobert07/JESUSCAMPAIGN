@@ -46,10 +46,10 @@ export function HeroTitle() {
     >
       <span className="hero-title-glow" aria-hidden="true" />
       <h1 id="hero-title" aria-label="Jesus Campaign">
-        <span className="hero-word hero-word-jesus" data-word="JESUS">
-          JESUS
+        <span className="screen-reader-text">JESUS CAMPAIGN</span>
+        <span className="hero-logo-title" aria-hidden="true">
+          <img src="/jesus-campaign-logo.png" alt="" />
         </span>
-        <span className="hero-word hero-word-campaign">Campaign</span>
       </h1>
     </div>
   );

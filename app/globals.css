@@ -54,6 +54,16 @@ img {
   max-width: 100%;
 }
 
+.screen-reader-text {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
 button,
 input,
 select,
@@ -368,7 +378,9 @@ address {
   position: relative;
   z-index: 3;
   width: 100%;
-  margin: 18px auto -4.5vw;
+  display: flex;
+  justify-content: center;
+  margin: 18px auto -42px;
   isolation: isolate;
 }
 
@@ -391,44 +403,46 @@ address {
 }
 
 .hero h1 {
+  display: flex;
+  justify-content: center;
+  width: 100%;
   margin: 0;
-  font-size: clamp(6.8rem, 17vw, 16rem);
+  font-size: 1rem;
   font-weight: 700;
-  letter-spacing: -0.065em;
-  line-height: 0.7;
+  letter-spacing: 0;
+  line-height: 1;
   text-transform: uppercase;
 }
 
-.hero-word {
+.hero-logo-title {
   position: relative;
   display: block;
-  width: 100%;
-  will-change: transform;
-}
-
-.hero-word-jesus {
-  color: var(--paper-bright);
-  font-family: var(--font-cormorant), Georgia, "Times New Roman", serif;
-  font-weight: 700;
-  letter-spacing: -0.065em;
-  line-height: 0.68;
-  text-shadow: 0 24px 60px rgba(0, 0, 0, 0.26);
+  width: min(780px, 64vw);
+  max-width: 100%;
+  aspect-ratio: 1.45;
+  overflow: hidden;
+  border-radius: clamp(28px, 3vw, 44px);
+  background: rgba(255, 253, 248, 0.96);
+  box-shadow:
+    0 28px 72px rgba(0, 0, 0, 0.3),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.6);
   transform: translate3d(
     var(--hero-shift-x),
     var(--hero-shift-y),
     0
   );
   transition: transform 260ms cubic-bezier(0.2, 0.75, 0.25, 1);
+  will-change: transform;
 }
 
-.hero-word-jesus::before {
+.hero-logo-title::before {
   position: absolute;
   z-index: -1;
-  inset: 0;
-  color: transparent;
-  content: attr(data-word);
-  opacity: 0.48;
-  -webkit-text-stroke: 2px var(--accent);
+  inset: -16px;
+  border: 1px solid rgba(220, 101, 56, 0.55);
+  border-radius: inherit;
+  content: "";
+  opacity: 0.5;
   transform: translate3d(
     var(--hero-reverse-x),
     var(--hero-reverse-y),
@@ -439,33 +453,11 @@ address {
     opacity 240ms ease;
 }
 
-.hero-word-campaign {
-  width: max-content;
-  max-width: 92%;
-  margin: 0.16em auto 0;
-  padding: 0.14em 0.34em 0.12em;
-  border-radius: 999px;
-  background: var(--accent);
-  color: var(--paper-bright);
-  font-family: var(--font-archivo), Arial, sans-serif;
-  font-size: 0.37em;
-  font-style: normal;
-  font-weight: 800;
-  letter-spacing: 0.13em;
-  line-height: 0.96;
-  text-indent: 0.13em;
-  -webkit-text-stroke: 0;
-  box-shadow: 0 18px 44px rgba(207, 73, 39, 0.28);
-  transform: translate3d(
-    var(--hero-reverse-x),
-    var(--hero-reverse-y),
-    0
-  ) rotate(-2deg);
-  transition: transform 300ms cubic-bezier(0.2, 0.75, 0.25, 1);
-}
-
-.hero-word-campaign::after {
-  display: none;
+.hero-logo-title img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
 }
 
 .hero-media {
@@ -1659,12 +1651,8 @@ footer {
 }
 
 @media (hover: hover) and (pointer: fine) {
-  .hero-title-stage:hover .hero-word-jesus::before {
+  .hero-title-stage:hover .hero-logo-title::before {
     opacity: 0.8;
-  }
-
-  .hero-title-stage:hover .hero-word-campaign::after {
-    transform: scaleX(1);
   }
 }
 
@@ -1761,7 +1749,7 @@ footer {
   }
 
   .hero {
-    padding-top: 116px;
+    padding-top: 104px;
     background: linear-gradient(
       to bottom,
       var(--ink) 0,
@@ -1772,30 +1760,28 @@ footer {
   }
 
   .hero-title-stage {
-    margin-top: 22px;
-    margin-bottom: -2vw;
+    margin-top: 18px;
+    margin-bottom: -24px;
   }
 
   .hero h1 {
-    font-size: clamp(4.8rem, 20vw, 9rem);
-    line-height: 0.74;
+    font-size: 1rem;
+    line-height: 1;
   }
 
-  .hero-word-campaign {
-    margin-top: 0.24em;
-    padding: 0.16em 0.34em 0.14em;
-    font-size: 0.42em;
-    letter-spacing: 0.09em;
-    text-indent: 0.09em;
+  .hero-logo-title {
+    width: min(560px, 76vw);
+    border-radius: 30px;
   }
 
   .hero-media {
-    height: max(540px, 68svh);
-    margin-top: 22px;
+    height: min(660px, 70svh);
+    min-height: 520px;
+    margin-top: 18px;
   }
 
   .hero-bottom {
-    top: 42%;
+    top: 45%;
   }
 
   .location-tag {
@@ -1890,8 +1876,9 @@ footer {
 
 @media (max-width: 560px) {
   .hero {
-    padding-top: 108px;
-    padding-bottom: 48px;
+    min-height: auto;
+    padding-top: 96px;
+    padding-bottom: 36px;
   }
 
   .hero-content {
@@ -1903,19 +1890,17 @@ footer {
   }
 
   .hero-title-stage {
-    margin-top: 25px;
-    margin-bottom: 12px;
+    margin-top: 18px;
+    margin-bottom: -6px;
   }
 
   .hero h1 {
-    font-size: clamp(4.4rem, 21vw, 6rem);
+    font-size: 1rem;
   }
 
-  .hero-word-campaign {
-    max-width: 94%;
-    font-size: 0.36em;
-    letter-spacing: 0.075em;
-    text-indent: 0.075em;
+  .hero-logo-title {
+    width: min(330px, 88vw);
+    border-radius: 24px;
   }
 
   .hero-title-glow {
@@ -1925,9 +1910,10 @@ footer {
 
   .hero-media {
     width: calc(100% - 32px);
-    height: 560px;
-    margin: 20px 16px 0;
-    border-radius: 28px;
+    height: 440px;
+    min-height: 0;
+    margin: 14px 16px 0;
+    border-radius: 26px;
   }
 
   .hero-image {
@@ -1935,12 +1921,13 @@ footer {
   }
 
   .hero-bottom {
-    top: 39%;
-    width: calc(100% - 30px);
+    top: 38%;
+    width: calc(100% - 28px);
   }
 
   .hero-bottom > p {
-    font-size: clamp(1.25rem, 6.2vw, 1.7rem);
+    font-size: 1.28rem;
+    line-height: 1.16;
   }
 
   .button-row {
@@ -1950,14 +1937,16 @@ footer {
   }
 
   .button-row .button {
-    min-width: 210px;
+    width: min(100%, 245px);
+    min-width: 0;
   }
 
   .location-tag {
     align-items: flex-start;
     flex-direction: column;
     gap: 8px;
-    padding: 14px 16px;
+    padding: 13px 15px;
+    border-radius: 18px;
   }
 
   .scroll-note {
@@ -2202,11 +2191,15 @@ footer {
 
 @media (max-width: 360px) {
   .hero h1 {
-    font-size: 4rem;
+    font-size: 1rem;
   }
 
-  .hero-word-campaign {
-    font-size: 0.34em;
+  .hero-logo-title {
+    width: 292px;
+  }
+
+  .hero-bottom > p {
+    font-size: 1.15rem;
   }
 
   .ministry-list {
@@ -2242,8 +2235,8 @@ footer {
   }
 
   .hero-media,
-  .hero-word,
-  .hero-word-jesus::before {
+  .hero-logo-title,
+  .hero-logo-title::before {
     transform: none !important;
   }
 }
