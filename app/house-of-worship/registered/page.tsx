@@ -19,8 +19,8 @@ export default async function HouseOfWorshipRegistered({
           <em>in the room.</em>
         </h1>
         <p>
-          {name}, your place has been noted for House of Worship on August 29,
-          10 AM to 10 PM at Pattom, Trivandrum. Come expectant. Bring a heart
+          {name}, your place has been noted for House of Worship on August 22,
+          2026 from 10 AM to 5 PM at Pattom, Trivandrum. Come expectant. Bring a heart
           ready to worship, and let the day become a living altar.
         </p>
         <Link className="button button-light" href="/">

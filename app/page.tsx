@@ -1,4 +1,5 @@
 import { ContactForm } from "./contact-form";
+import { HouseOfWorshipPopup } from "./house-of-worship-popup";
 import { HeroTitle } from "./hero-title";
 import { ScrollEffects } from "./scroll-effects";
 
@@ -110,10 +111,26 @@ const galleryImages = [
   },
 ];
 
+const houseOfWorshipPosters = [
+  {
+    src: "/images/house-of-worship-2026/blue-main-poster.png",
+    alt: "House of Worship August 22 2026 blue event poster",
+  },
+  {
+    src: "/images/house-of-worship-2026/join-us-poster.png",
+    alt: "Join us for House of Worship August 22 2026 poster",
+  },
+  {
+    src: "/images/house-of-worship-2026/make-room-poster.png",
+    alt: "Make room for His presence House of Worship poster",
+  },
+];
+
 export default function Home() {
   return (
     <>
       <ScrollEffects />
+      <HouseOfWorshipPopup />
 
       <a className="skip-link" href="#main-content">
         Skip to content
@@ -438,17 +455,17 @@ export default function Home() {
         <section className="house-section" id="house-of-worship">
           <div className="house-frame" data-reveal>
             <img
-              src="/images/house-of-worship-youth.png"
-              alt="Young people attending a House of Worship gathering"
+              src="/images/sound-desk-prayer.png"
+              alt="Worship gathering at House of Worship in Pattom"
             />
             <div className="house-overlay" />
             <div className="house-copy">
               <div className="section-kicker light">
-                04 — Jesus Campaign Youth
+                04 — Abide Youth Collective
               </div>
-              <div className="event-pill">August 29 · 10 AM-10 PM · Pattom</div>
+              <div className="event-pill">August 22, 2026 · 10 AM to 5 PM · Pattom</div>
               <p className="house-pretitle">
-                12 hours of continuous worship
+                A worship series #01
               </p>
               <h2>
                 House of
@@ -457,17 +474,32 @@ export default function Home() {
               </h2>
               <div className="house-footer">
                 <p>
-                  More than an event. A room filled with prayer, praise, the
-                  Word, and worship leaders gathering in Pattom, Trivandrum.
+                  A day set apart for His presence. Free registration,
+                  worship leaders gathering, and hearts making room for Jesus
+                  at Pattom, Trivandrum.
                 </p>
-                <a
-                  className="button button-light"
-                  href="/house-of-worship"
-                >
-                  Register free <span aria-hidden="true">↗</span>
-                </a>
+                <div className="house-actions">
+                  <a
+                    className="button button-light"
+                    href="https://forms.gle/QP52v2ANrQe6PvCA6"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    Register free <span aria-hidden="true">↗</span>
+                  </a>
+                  <a className="button button-ghost-dark" href="/house-of-worship">
+                    Event details
+                  </a>
+                </div>
               </div>
             </div>
+          </div>
+          <div className="house-poster-strip" aria-label="House of Worship event posters">
+            {houseOfWorshipPosters.map((poster) => (
+              <figure className="house-poster-card" key={poster.src} data-reveal>
+                <img src={poster.src} alt={poster.alt} loading="lazy" />
+              </figure>
+            ))}
           </div>
         </section>
 

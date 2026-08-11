@@ -1,30 +1,74 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { HouseOfWorshipRegistrationForm } from "./registration-form";
+
+const registrationUrl = "https://forms.gle/QP52v2ANrQe6PvCA6";
+
+const posters = [
+  {
+    src: "/images/house-of-worship-2026/blue-main-poster.png",
+    alt: "House of Worship August 22 2026 blue main event poster",
+    title: "Main invitation",
+  },
+  {
+    src: "/images/house-of-worship-2026/nahoom-abraham.png",
+    alt: "House of Worship featuring Nahoom Abraham poster",
+    title: "Nahoom Abraham",
+  },
+  {
+    src: "/images/house-of-worship-2026/tanuja-debermma.png",
+    alt: "House of Worship featuring Tanuja Debermma poster",
+    title: "Tanuja Debermma",
+  },
+  {
+    src: "/images/house-of-worship-2026/samson-sam.png",
+    alt: "House of Worship featuring Samson Sam poster",
+    title: "Samson Sam",
+  },
+  {
+    src: "/images/house-of-worship-2026/white-info-poster.png",
+    alt: "House of Worship white information poster",
+    title: "Event details",
+  },
+  {
+    src: "/images/house-of-worship-2026/sign-poster.png",
+    alt: "House of Worship sign style poster",
+    title: "Come ready",
+  },
+  {
+    src: "/images/house-of-worship-2026/make-room-poster.png",
+    alt: "Make room for His presence House of Worship poster",
+    title: "Make room",
+  },
+  {
+    src: "/images/house-of-worship-2026/join-us-poster.png",
+    alt: "Join us for House of Worship August 22 2026 poster",
+    title: "Join us",
+  },
+];
 
 export const metadata: Metadata = {
-  title: "House of Worship Registration",
+  title: "House of Worship | August 22, 2026",
   description:
-    "Register free for House of Worship, a 12-hour continuous worship gathering on August 29 from 10 AM to 10 PM at Pattom, Trivandrum.",
+    "Register free for House of Worship, a worship series #01 by ABIDE Youth Collective on August 22, 2026 from 10 AM to 5 PM at Jesus Campaign Church, Pattom, Trivandrum.",
   openGraph: {
-    title: "House of Worship | August 29",
+    title: "House of Worship | August 22, 2026",
     description:
-      "A 12-hour continuous worship gathering at Pattom, Trivandrum. Register free with Jesus Campaign Church.",
+      "A day set apart for His presence. Free registration for House of Worship by ABIDE Youth Collective at Jesus Campaign Church, Pattom, Trivandrum.",
     images: [
       {
-        url: "/images/house-of-worship-youth.png",
+        url: "/images/house-of-worship-2026/blue-main-poster.png",
         width: 1448,
-        height: 1086,
-        alt: "Young people attending a House of Worship gathering",
+        height: 2048,
+        alt: "House of Worship August 22 2026 event poster",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "House of Worship | August 29",
+    title: "House of Worship | August 22, 2026",
     description:
-      "A 12-hour continuous worship gathering at Pattom, Trivandrum. Register free.",
-    images: ["/images/house-of-worship-youth.png"],
+      "Free registration for House of Worship by ABIDE Youth Collective, 10 AM to 5 PM at Pattom, Trivandrum.",
+    images: ["/images/house-of-worship-2026/blue-main-poster.png"],
   },
 };
 
@@ -44,46 +88,118 @@ export default function HouseOfWorshipPage() {
       <section className="event-hero" aria-labelledby="event-title">
         <figure className="event-photo-panel">
           <img
-            src="/images/house-of-worship-youth.png"
-            alt="Young people attending a House of Worship gathering"
+            src="/images/house-of-worship-2026/blue-main-poster.png"
+            alt="House of Worship August 22 2026 event poster"
           />
-          <figcaption>Jesus Campaign Youth · Pattom, Trivandrum</figcaption>
+          <figcaption>ABIDE Youth Collective · Jesus Campaign Church</figcaption>
         </figure>
         <div className="event-copy">
-          <p className="eyebrow light">Jesus Campaign Youth presents</p>
+          <p className="eyebrow light">House of Worship is here 🔥🙌</p>
           <h1 id="event-title">
             House of
             <br />
             Worship
           </h1>
           <p className="event-summary">
-            Twelve hours of continuous worship, prayer, and the Word with
-            worship leaders gathering in Pattom, Trivandrum.
+            A day set apart for His presence. House of Worship, a worship
+            series #01 by ABIDE Youth Collective, gathers worship leaders and
+            hungry hearts in Pattom, Trivandrum.
           </p>
           <div className="event-meta-grid" aria-label="Event details">
-            <span>August 29</span>
-            <span>10 AM-10 PM</span>
-            <span>Pattom, Trivandrum</span>
+            <span>August 22, 2026</span>
+            <span>Saturday</span>
+            <span>10 AM to 5 PM</span>
             <span>Free registration</span>
+          </div>
+          <div className="event-hero-actions">
+            <a
+              className="button button-light"
+              href={registrationUrl}
+              target="_blank"
+              rel="noreferrer"
+            >
+              Register here <span aria-hidden="true">↗</span>
+            </a>
+            <a className="button button-ghost-light" href="tel:+919048065353">
+              Call for details
+            </a>
           </div>
         </div>
       </section>
 
-      <section className="event-register" aria-labelledby="register-title">
+      <section className="event-register event-info-panel" aria-labelledby="register-title">
         <div>
-          <p className="section-kicker light">Register free</p>
+          <p className="section-kicker light">Free registration</p>
           <h2 id="register-title">
-            Make room
+            Come
             <br />
-            for worship.
+            expectant.
           </h2>
           <p>
-            Add your details and we will keep your place noted for House of
-            Worship. Come ready for a full day of praise, prayer, and
-            encounter.
+            Register through the free Google Form, or scan the QR code on the
+            posters. Midday meal is provided. Bring a heart ready to worship.
           </p>
         </div>
-        <HouseOfWorshipRegistrationForm />
+        <article className="event-details-card">
+          <p className="mini-label">House of Worship</p>
+          <h3>A worship series #01</h3>
+          <dl>
+            <div>
+              <dt>Date</dt>
+              <dd>August 22, 2026 · Saturday</dd>
+            </div>
+            <div>
+              <dt>Time</dt>
+              <dd>10 AM to 5 PM</dd>
+            </div>
+            <div>
+              <dt>Venue</dt>
+              <dd>
+                Jesus Campaign Church, Basement Floor, Pattom, Trivandrum
+              </dd>
+            </div>
+            <div>
+              <dt>For details</dt>
+              <dd>+91 90480 65353</dd>
+            </div>
+          </dl>
+          <div className="event-qr-row">
+            <img
+              src="/images/house-of-worship-2026/registration-qr.png"
+              alt="QR code for House of Worship free registration"
+            />
+            <a
+              className="button button-light"
+              href={registrationUrl}
+              target="_blank"
+              rel="noreferrer"
+            >
+              Open registration <span aria-hidden="true">↗</span>
+            </a>
+          </div>
+        </article>
+      </section>
+
+      <section className="event-poster-section" aria-labelledby="event-posters-title">
+        <div className="event-poster-heading">
+          <p className="section-kicker light">Event posters</p>
+          <h2 id="event-posters-title">Invite someone.</h2>
+          <p>
+            Share the invitation, scan the QR, and make room for a day in His
+            presence.
+          </p>
+        </div>
+        <div className="event-poster-grid">
+          {posters.map((poster, index) => (
+            <figure className="event-poster-card" key={poster.src}>
+              <img src={poster.src} alt={poster.alt} loading="lazy" />
+              <figcaption>
+                <span>{String(index + 1).padStart(2, "0")}</span>
+                <span>{poster.title}</span>
+              </figcaption>
+            </figure>
+          ))}
+        </div>
       </section>
     </main>
   );

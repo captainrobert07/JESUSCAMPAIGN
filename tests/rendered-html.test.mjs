@@ -38,7 +38,8 @@ test("server-renders the complete church homepage", async () => {
   assert.match(html, /Come as/);
   assert.match(html, /One church, two locations/);
   assert.match(html, /House of Worship/i);
-  assert.match(html, /August 29/i);
+  assert.match(html, /August 22, 2026/i);
+  assert.match(html, /QP52v2ANrQe6PvCA6/i);
   assert.match(html, /Register free/i);
   assert.match(html, /Trivandrum/i);
   assert.match(html, /Gallery/i);
@@ -80,18 +81,20 @@ test("renders the message confirmation route and removes starter artifacts", asy
   ]);
 });
 
-test("renders the House of Worship registration page", async () => {
+test("renders the House of Worship event page", async () => {
   const response = await render("/house-of-worship");
   assert.equal(response.status, 200);
 
   const html = await response.text();
   assert.match(html, /House of Worship/);
-  assert.match(html, /Twelve hours of continuous worship/i);
-  assert.match(html, /August 29/i);
-  assert.match(html, /10 AM-10 PM/i);
+  assert.match(html, /A day set apart for His presence/i);
+  assert.match(html, /ABIDE Youth Collective/i);
+  assert.match(html, /August 22, 2026/i);
+  assert.match(html, /10 AM to 5 PM/i);
   assert.match(html, /Pattom, Trivandrum/i);
-  assert.match(html, /Full name/i);
-  assert.match(html, /Contact number/i);
+  assert.match(html, /QP52v2ANrQe6PvCA6/i);
+  assert.match(html, /blue-main-poster\.png/i);
+  assert.match(html, /registration-qr\.png/i);
   assert.match(html, /Register free/i);
 });
 
@@ -103,5 +106,5 @@ test("renders the House of Worship registration confirmation route", async () =>
   assert.match(html, /Registration received/i);
   assert.match(html, /Robert/);
   assert.match(html, /in the room/i);
-  assert.match(html, /August 29/i);
+  assert.match(html, /August 22/i);
 });
