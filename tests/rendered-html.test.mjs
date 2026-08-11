@@ -41,6 +41,8 @@ test("server-renders the complete church homepage", async () => {
   assert.match(html, /August 22, 2026/i);
   assert.match(html, /QP52v2ANrQe6PvCA6/i);
   assert.match(html, /Register free/i);
+  assert.match(html, /abide\.youth\.collective/i);
+  assert.match(html, /facebook\.com\/share\/1Hd77sPhWo/i);
   assert.match(html, /Trivandrum/i);
   assert.match(html, /Gallery/i);
   assert.match(html, /community-notes\.png/i);
@@ -95,6 +97,8 @@ test("renders the House of Worship event page", async () => {
   assert.match(html, /QP52v2ANrQe6PvCA6/i);
   assert.match(html, /blue-main-poster\.png/i);
   assert.match(html, /registration-qr\.png/i);
+  assert.match(html, /abide\.youth\.collective/i);
+  assert.match(html, /facebook\.com\/share\/1Hd77sPhWo/i);
   assert.match(html, /Register free/i);
 });
 

@@ -2,6 +2,9 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 const registrationUrl = "https://forms.gle/QP52v2ANrQe6PvCA6";
+const abideInstagram =
+  "https://www.instagram.com/abide.youth.collective?igsh=bmUyZjd4eGZ4a3M0";
+const abideFacebook = "https://www.facebook.com/share/1Hd77sPhWo/";
 
 const posters = [
   {
@@ -123,6 +126,14 @@ export default function HouseOfWorshipPage() {
             <a className="button button-ghost-light" href="tel:+919048065353">
               Call for details
             </a>
+            <a
+              className="button button-ghost-light"
+              href={abideInstagram}
+              target="_blank"
+              rel="noreferrer"
+            >
+              Follow ABIDE
+            </a>
           </div>
         </div>
       </section>
@@ -161,6 +172,17 @@ export default function HouseOfWorshipPage() {
             <div>
               <dt>For details</dt>
               <dd>+91 90480 65353</dd>
+            </div>
+            <div>
+              <dt>Follow updates</dt>
+              <dd className="event-social-links">
+                <a href={abideInstagram} target="_blank" rel="noreferrer">
+                  Instagram
+                </a>
+                <a href={abideFacebook} target="_blank" rel="noreferrer">
+                  Facebook
+                </a>
+              </dd>
             </div>
           </dl>
           <div className="event-qr-row">

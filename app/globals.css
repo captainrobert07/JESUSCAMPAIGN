@@ -1689,6 +1689,28 @@ address {
   color: rgba(255, 255, 255, 0.82);
 }
 
+.event-social-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.event-social-links a {
+  padding: 7px 11px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 999px;
+  color: var(--paper-bright);
+  font-size: 0.68rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.event-social-links a:hover {
+  border-color: var(--paper-bright);
+  background: rgba(255, 255, 255, 0.1);
+}
+
 .event-qr-row {
   display: grid;
   grid-template-columns: 132px minmax(0, 1fr);

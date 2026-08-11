@@ -7,6 +7,9 @@ const whatsappTiming =
   "https://wa.me/919048065353?text=Hello%20Jesus%20Campaign%20Church%2C%20I%20would%20like%20to%20know%20the%20current%20service%20timings.";
 const pattomDirections =
   "https://www.google.com/maps/search/?api=1&query=F+Square+Building+Lekshmi+Nagar+Pattom+Trivandrum+Kerala+695004";
+const abideInstagram =
+  "https://www.instagram.com/abide.youth.collective?igsh=bmUyZjd4eGZ4a3M0";
+const abideFacebook = "https://www.facebook.com/share/1Hd77sPhWo/";
 
 const galleryImages = [
   {
@@ -611,7 +614,10 @@ export default function Home() {
             <a href={whatsappTiming} target="_blank" rel="noreferrer">
               WhatsApp
             </a>
-            <a href="https://www.facebook.com/" target="_blank" rel="noreferrer">
+            <a href={abideInstagram} target="_blank" rel="noreferrer">
+              Instagram
+            </a>
+            <a href={abideFacebook} target="_blank" rel="noreferrer">
               Facebook
             </a>
           </div>
